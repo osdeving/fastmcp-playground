@@ -12,7 +12,7 @@ mcp = FastMCP()
     # conjunto de tags da tool, pode ser usado pelo server e alguns casos pelo client também
     tags={'catalog', 'search'},
 
-    # 
+    # informações sobre a tool. Esses dados são passados para o MCP no schema via o campo _meta e pode ser usado pelo client
     meta={'version': '1.2', 'author': 'product-team'}
 )
 def search_products(query: str, category: str | None = None) -> list[dict]:
@@ -21,6 +21,7 @@ def search_products(query: str, category: str | None = None) -> list[dict]:
     return [{"id": 2, "name": "Wireless Keyboard"}]
 
 
-
+if __name__ == '__main__':
+    mcp.run()
 
 
